@@ -1,0 +1,5 @@
+# Ignore all PNG images anywhere in the project
+*.png
+
+# Ignore all directories located in the main root folder
+/*/

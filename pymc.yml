@@ -1,0 +1,7 @@
+name: pymc_env
+channels:
+  - defaults
+dependencies:
+  - pymc[version='>=5']
+  - spyder-kernels
+prefix: C:\Users\pczjo\AppData\Local\miniconda3\envs\pymc_env

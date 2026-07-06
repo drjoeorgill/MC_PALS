@@ -95,6 +95,9 @@ import pytensor
 # 1. Force faster compilation by preventing over-optimization
 pytensor.config.mode = 'FAST_COMPILE'
 
+pytensor.config.vml_num_threads = 96
+pytensor.config.openmp = True
+
 import pymc as pm
 import pytensor.tensor as pt
 import numpy as np
@@ -179,10 +182,11 @@ if __name__ == '__main__':
         print("Compiling and Sampling (Optimized Scale)...")
         # chains=2 allows for convergence checks; draws=200 is a good balance
         trace = pm.sample(
-            draws=400, 
-            tune=400, 
-            chains=4, 
-            target_accept=0.85, 
+            draws=1000, 
+            tune=1000, 
+            chains=24,
+            cores=24, 
+            target_accept=0.95, 
             init='jitter+adapt_diag'
         )
 

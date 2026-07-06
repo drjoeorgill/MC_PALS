@@ -24,7 +24,7 @@ def conv(x,height,position,std,A,B,C,l1,l3):
 def plot_pals(sample):
    
     files = np.loadtxt('charlies_samples.txt',dtype=str)
-    filename = files[sample] + '_T1'
+    filename = 'data/' + files[sample] + '_T1'
     
     label = filename
     
@@ -204,11 +204,11 @@ if __name__ == '__main__':
     plt.plot(x_val, y_fit, color='red', lw=2, label='Bayesian Mean Fit')
     plt.title("Convolution Fit (Scaled NUTS)")
     plt.legend()
-    plt.savefig('convolution_fit5.png')
-    print("Plot saved as 'convolution_fit5.png'")
+    plt.savefig('convolution_fit6.png')
+    print("Plot saved as 'convolution_fit6.png'")
 
     az.plot_posterior(trace, var_names=["l1", "l3"])
-    plt.savefig('posterior_dist5.png')
+    plt.savefig('posterior_dist6.png')
 
     az.plot_trace(trace, var_names=["l1", "l3"])
-    plt.savefig('trace_diagnostic5.png')
+    plt.savefig('trace_diagnostic6.png')
